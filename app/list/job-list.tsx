@@ -1,4 +1,5 @@
 "use client";
+import { SHEET_URL } from "@/config/constants";
 import { Button } from "@heroui/button";
 import { Link } from "@heroui/link";
 import { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from "@heroui/table";
@@ -9,7 +10,7 @@ export default function JobsList() {
     useEffect(() => {
         async function fetchJobs() {
             try {
-                const response = await fetch("https://script.google.com/macros/s/AKfycbzF_YWk7tvC1j04sUkykSKhy0wCHc54Gh7m1HK5qvfVTqLsN1sxb0RRZNxfvM3BRoO-/exec");
+                const response = await fetch(SHEET_URL);
                 if (!response.ok) {
                     throw new Error("Failed to fetch jobs");
                 }
@@ -40,9 +41,16 @@ export default function JobsList() {
           <TableCell>{item.department}</TableCell>
           <TableCell>{item.lastDate}</TableCell>
           <TableCell>
-            <Link isExternal showAnchorIcon href={item.applyLink}>
+            <Button
+              color="primary"
+              size="sm"
+              onClick={() => window.location.href = `/list/${item.id}`}
+            >
+              Apply
+            </Button>
+            {/* <Link  showAnchorIcon href={item.id}>
                 Apply Here
-            </Link>
+            </Link> */}
           </TableCell>
         </TableRow>})}
       </TableBody>

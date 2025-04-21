@@ -8,6 +8,7 @@ import { Providers } from "./providers";
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import { Navbar } from "@/components/navbar";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: {
@@ -59,6 +60,21 @@ export default function RootLayout({
               </Link>
             </footer>
           </div>
+          <>
+          <Script
+            id="aclib-loader"
+            src="https://acscdn.com/script/aclib.js"
+            strategy="afterInteractive"
+          />
+          <Script id="aclib-run" strategy="afterInteractive">
+            {`
+              aclib.runAutoTag({
+                zoneId: 'c2woo5vbsi',
+              });
+            `}
+          </Script>
+        </>
+
         </Providers>
       </body>
     </html>

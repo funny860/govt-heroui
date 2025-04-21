@@ -11,18 +11,38 @@ export default function Home() {
   return (
     <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
       <div className="inline-block max-w-xl text-center justify-center">
-        <span className={title()}>Make&nbsp;</span>
-        <span className={title({ color: "violet" })}>beautiful&nbsp;</span>
+        {/* <span className={title()}>Make&nbsp;</span>
+        <span className={title({ color: "violet" })}>beautiful&nbsp;</span> */}
         <br />
-        <span className={title()}>
-          websites regardless of your design experience.
+        <span className={title({color : "yellow"})}>
+          All&nbsp;
         </span>
-        <div className={subtitle({ class: "mt-4" })}>
+        <span className={title()}>
+          Indian&nbsp;
+        </span>
+        <span className={title({color : "green"})}>
+          Government
+        </span>
+        <br></br>
+        <span className={title()}>
+        Jobs at one place
+        </span>
+        {/* <div className={subtitle({ class: "mt-4" })}>
           Beautiful, fast and modern React UI library.
-        </div>
+        </div> */}
       </div>
+      <Link
+          className={buttonStyles({
+            color: "warning",
+            radius: "full",
+            variant: "shadow",
+          })}
+          href='/list'
+        >
+          View Jobs
+        </Link>
 
-      <div className="flex gap-3">
+      {/* <div className="flex gap-3">
         <Link
           isExternal
           className={buttonStyles({
@@ -42,15 +62,15 @@ export default function Home() {
           <GithubIcon size={20} />
           GitHub
         </Link>
-      </div>
+      </div> */}
 
-      <div className="mt-8">
+      {/* <div className="mt-8">
         <Snippet hideCopyButton hideSymbol variant="bordered">
           <span>
             Get started by editing <Code color="primary">app/page.tsx</Code>
           </span>
         </Snippet>
-      </div>
+      </div> */}
     </section>
   );
 }
