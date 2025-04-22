@@ -61,11 +61,7 @@ export default function RootLayout({
             </footer>
           </div>
           <>
-          <Script
-            id="aclib-loader"
-            src="https://acscdn.com/script/aclib.js"
-            strategy="afterInteractive"
-          />
+          <script id="aclib-loader" src="https://acscdn.com/script/aclib.js"></script>
           <Script id="aclib-run" strategy="afterInteractive">
             {`
               aclib.runAutoTag({
